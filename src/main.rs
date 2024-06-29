@@ -1,13 +1,21 @@
 
 
 fn main() {
-  let mut name = String::from("dipesh");
- let fullname = add_surname(&mut name);
-println!("fullName is {fullname}");
+let full_string =String::from(" he l l l o");
+let first_word = first_word(&full_string);
+println!("{first_word}")
 }
 
-fn add_surname(s : &mut String)-> &mut String{
- s.push_str(" kala");
- s
+fn first_word(s: &String)-> String {
+let  mut first_word =String::new();
+// let bytes = s.as_bytes();
+for i in s.chars() {
+    if i == ' '{
+        break;
+    }
+    else{
+        first_word.push(i)}
 
+};
+first_word
 }
