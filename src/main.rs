@@ -1,21 +1,36 @@
 
 
 fn main() {
-let full_string =String::from(" he l l l o");
-let first_word = first_word(&full_string);
-println!("{first_word}")
-}
-
-fn first_word(s: &String)-> String {
-let  mut first_word =String::new();
-// let bytes = s.as_bytes();
-for i in s.chars() {
-    if i == ' '{
-        break;
-    }
-    else{
-        first_word.push(i)}
-
+let mut  user1_data = User {
+    name : String::from("Dipesh"),
+    sur_name : String::from("kala"),
+    age :23,
+    active: true
 };
-first_word
+user1_data.sur_name = String::from("jain");
+println!("{}",user1_data.name);
+println!("{}",user1_data.sur_name);
+println!("{}",user1_data.age);
+println!("{}",user1_data.active);
+
+let user2_data = User {
+    sur_name: String::from("kala"),
+    ..user1_data
+};
+println!("user 2 : {}",user2_data.name);
+println!("user 2 : {}",user2_data.sur_name);
+println!("user 2 : {}",user2_data.age);
+println!("user 2 : {}",user2_data.active);
+
+let color_sruct = Color(1,0);
+println!("{}",color_sruct.0);
+println!("{}",color_sruct.1);
 }
+struct  User {
+    name : String,
+    sur_name: String,
+    age : i32,
+    active : bool 
+} 
+// tuple struct 
+struct Color(i32,i32);
